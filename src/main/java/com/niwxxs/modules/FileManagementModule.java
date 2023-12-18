@@ -6,13 +6,20 @@ import org.springframework.util.StringUtils;
 
 import java.io.*;
 import java.util.Objects;
-import java.util.UUID;
 
 /**
  * @author Niwxxs
  * @create 2023-12-14-下午3:42
  */
 public class FileManagementModule {
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
 
     private String path;
 
@@ -21,10 +28,10 @@ public class FileManagementModule {
             throw new NullPointerException("上传的文件不能为空");
         }
         final String sourceName = sourceFile.getName();
-        final String suffix = sourceName.substring(sourceName.lastIndexOf(".") + 1);
+        final String suffix = sourceName.substring(sourceName.lastIndexOf("."));
         final FileInputStream is = new FileInputStream(sourceFile);
-        final String fid = RandomStringUtils.random(15);
-        final File targetFile = new File(path, fid.concat(".").concat(suffix));
+        final String fid = RandomStringUtils.randomAlphanumeric(15);
+        final File targetFile = new File(path, fid.concat(suffix));
         targetFile.createNewFile();
         FileCopyUtils.copy(is, new FileOutputStream(targetFile));
         return fid;

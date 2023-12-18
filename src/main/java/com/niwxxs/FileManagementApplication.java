@@ -1,15 +1,13 @@
 package com.niwxxs;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author Niwxxs
  * @create 2023-12-14-下午3:19
  */
- @SpringBootApplication
+ @EnableAutoConfiguration
+ @ComponentScan(basePackages = {"com.niwxxs"})
 public class FileManagementApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(FileManagementApplication.class, args);
-    }
 }
