@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.niwxxs.config.InitAutoConfiguration,\
+com.niwxxs.config.ReportAutoConfiguration
