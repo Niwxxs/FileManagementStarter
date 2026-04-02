@@ -10,26 +10,26 @@
         <version>2.7.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.niwxxs</groupId>
-    <artifactId>FileManagement</artifactId>
+    <artifactId>report-spring-boot-starter-parent</artifactId>
     <version>0.1.0</version>
+    <packaging>pom</packaging>
+
+    <name>report-spring-boot-starter-parent</name>
+    <description>Aggregator parent for the report starter and demo modules.</description>
+
+    <modules>
+        <module>starter</module>
+        <module>demo</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>
+        <poi-tl.version>1.12.2</poi-tl.version>
+        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
+        <maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-    </dependencies>
 </project>

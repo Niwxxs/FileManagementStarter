@@ -1,0 +1,24 @@
+server:
+  port: 8088
+
+demo:
+  generate-on-startup: true
+
+report:
+  enabled: true
+  output-dir: ./demo-output
+  file-name-pattern: ${projectCode}-${reportCode}-${timestamp}.docx
+  schedule-enabled: true
+  tasks:
+    - name: project-a-weekly
+      enabled: true
+      project-code: project-a
+      report-code: weekly
+      cron: "0/30 * * * * ?"
+      zone: Asia/Shanghai
+    - name: project-b-weekly
+      enabled: true
+      project-code: project-b
+      report-code: weekly
+      cron: "15/30 * * * * ?"
+      zone: Asia/Shanghai
